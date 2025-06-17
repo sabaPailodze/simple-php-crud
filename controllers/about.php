@@ -1,5 +1,4 @@
 <?php
-require 'fns.php';
 
 $heading = 'About Us';
 
