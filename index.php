@@ -1,5 +1,6 @@
 <?php
 
+require 'Response.php';
 require 'fns.php';
 require 'Database.php';
 require 'router.php';
