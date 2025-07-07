@@ -4,7 +4,7 @@ $config = require('config.php');
 $db = new Database($config['database']);
 
 $heading = 'Note';
-$currentUserId = 4;
+$currentUserId = 1;
 
 
 $note = $db->query('select * from notes where id = :id',[
