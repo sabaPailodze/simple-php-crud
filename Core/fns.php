@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 function dd($value){
         echo "<pre>";
         echo var_dump($value);
