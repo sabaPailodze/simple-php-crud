@@ -29,10 +29,33 @@ $user = $db->query('select * from users where email = :email', [
     'email' => $email
 ])->find();
 
-if ($user) {
-    header('location: /');
-} else {
+// if ($user) {
+//     header('location: /');
+// } else {
 
+//     $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
+//         'email' => $email,
+//         'password' => $password
+//     ]);
+
+//     $_SESSION['user'] = [
+//         'email' => $email
+//     ];
+
+//     header('location: /');
+//     die();
+// }
+
+if ($user) {
+    // უკვე არსებობს - შევიდეს სისტემაში
+    $_SESSION['user'] = [
+        'email' => $user['email']
+    ];
+
+    header('location: /');
+    exit();
+} else {
+    // რეგისტრაცია
     $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
         'email' => $email,
         'password' => $password
@@ -43,5 +66,5 @@ if ($user) {
     ];
 
     header('location: /');
-    die();
+    exit();
 }
